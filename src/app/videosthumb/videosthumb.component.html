@@ -1,0 +1,15 @@
+<div class="container-fluid" style="margin-top: 50PX;">
+    <h5>VIDEOS</h5>
+    <div class="row"  *ngFor="let item of collection1 | paginate: {  id: 'foo',
+    itemsPerPage: pageSize,
+    currentPage: p }">
+      <div class="col-sm-12">
+
+        <img src={{item.image}} width="200px" height="150px">
+        <h6>{{item.heading}}</h6>
+      </div>
+    </div>
+</div>
+<button type="button" class="btn btn-primary" [routerLink] = "['/videos']" >More</button>
+
+

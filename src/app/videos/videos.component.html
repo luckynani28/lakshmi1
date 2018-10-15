@@ -1,0 +1,50 @@
+<div class="container" id="videos" style="margin-top: 50PX;" >
+    <app-navigationbar></app-navigationbar>
+      <div class="row">
+        <div class="col-md-4">
+
+          </div>
+      </div>
+        <div class="row" >
+          <div class="col-sm-10">
+            <h5>MORE VIDEOS</h5>
+            <div class="row">
+
+              <div class="col-sm-4"  *ngFor="let vi of videocollection | paginate: { itemsPerPage: 4, currentPage: p , totalItems:totalcount  } ; let galleryi = index">
+
+                  <!-- <img src={{vi.image}} id="gallimg" height="250px" width="250px">
+                  <h6>{{vi.heading}}</h6> -->
+                  <div class="">
+                      <!-- <iframe
+                      src="{{vi.url}}">
+
+                      </iframe> -->
+                      <iframe width="500" height="281" src="{{vi.url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                      <h6>{{vi.url}}</h6>
+                      <!-- <iframe class="embed-responsive-item" src="{{vi.url}}" allowfullscreen ></iframe>
+                      <h6>{{vi.url}}</h6>
+                      <h6>{{vi.heading}}</h6> -->
+
+                    </div>
+                </div>
+
+              </div>
+                <pagination-controls (pageChange) = "p = $event" (pageChange) = "pagiantinvideo($event)"></pagination-controls>
+          </div>
+
+          <div  class="col-sm-2">
+              <h5>HOT POSTS</h5>
+              <div *ngFor="let galle of hotpost ">
+                  <img src={{galle.image}} width="220px" height="170px">
+                  <p><strong>{{galle.heading}}</strong></p>
+                </div>
+                <button type="button" class="btn btn-primary" [routerLink] = "['/articles']" >More</button>
+          </div>
+
+
+        </div>
+
+
+
+</div>
+

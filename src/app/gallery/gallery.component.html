@@ -1,0 +1,47 @@
+<div class="container" id="gallery" style="margin-top: 50PX;" >
+    <app-navigationbar></app-navigationbar>
+      <h5>GALLERY</h5>
+      <div class="row">
+        <div class="col-md-4">
+      </div>
+      </div>
+        <div class="row" >
+          <div class="col-sm-10">
+            <h5>MORE IMAGES</h5>
+
+
+            <div class="row">
+          <div class="col-sm-3"  *ngFor="let galle of imagecollection | paginate: { itemsPerPage: 10, currentPage: p , totalItems:totalcount  } ; let galleryi = index;let i=index">
+                   <!-- <div class="col-sm-3"  *ngFor="let galle of imagecollection"> -->
+
+           <!-- <img src={{galle.thumbnailimg}}  id="#sandy"  (click)="getImges(galle.title)" class="gallimg"> -->
+
+           <img src={{galle.thumbnailimg}}  id="#sandy"  (click)="getImges(galle.title)"  class="gallimg">
+
+           <div class="">
+            <!-- <app-modelimage [imagegallery]="kvl"></app-modelimage> -->
+           </div>
+                </div>
+
+            </div>
+                <pagination-controls (pageChange) = "p = $event" (pageChange) = "pagiantinGallery($event)"></pagination-controls>
+          </div>
+          <div  class="col-sm-2">
+              <h5>HOT POSTS</h5>
+              <div *ngFor="let galle of hotpost ">
+                  <img src={{galle.image}} width="220px" height="170px" >
+                  <p><strong>{{galle.heading}}</strong></p>
+                </div>
+          </div>
+      </div>
+</div>
+
+
+<!--        for displaying the images  -->
+
+ <!-- <h2>Images</h2>
+<div id="sandy" *ngFor="let galle of kvl">
+<div *ngFor="let g of galle.images">
+  <img src={{g}} class="gallimg"  >
+</div>
+</div> -->
